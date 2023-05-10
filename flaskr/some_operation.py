@@ -2,11 +2,11 @@ from flask import (
     Blueprint, render_template, request, make_response
 )
 
-bp = Blueprint('operation', __name__, url_prefix='/op')
+bp = Blueprint('some_operation', __name__, url_prefix='/op')
 
 @bp.route('/', methods=['GET'])
 def description():
-    return render_template('operation.html')
+    return render_template('some-operation.html')
 
 @bp.route('/some-operation', methods=('GET', 'POST'))
 def operation():
@@ -24,7 +24,7 @@ def operation():
     elif request.method == 'POST':
         data = request.get_json()
 
-        # Here some operation happens on the data, then a response is send.
+        # Here some operation happens on the data, then a response is sent.
         # In this template we just return a confirmation that the data is successfully received.
 
         print(data)
