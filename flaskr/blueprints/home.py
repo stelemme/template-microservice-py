@@ -2,7 +2,7 @@ from flask import (
     Blueprint, render_template, request
 )
 
-bp = Blueprint('home', __name__)
+bp = Blueprint('home', __name__, url_prefix='/')
 
 @bp.route('/')
 def index():
