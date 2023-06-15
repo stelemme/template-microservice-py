@@ -10,11 +10,20 @@ The Microservices Template can now be installed using the following command.
 pip install -e .
 ```
 ## Running the Microservice
-To run the Microservices Template, a virtual environment needs to be activated using the following command.
+To run the Microservices, a virtual environment needs to be activated using the following command.
 ```
 .venv\Scripts\activate
 ```
-After the virtual environment is activated the Microservices Template can be run using the following command. Additional arguments can be added to the command to for example run the Microservice in debug mode (--debug), which enables live reloading. The port on which the Microservice runs can also be changed with an additional argument (--port <port-number>).
+After the virtual environment is activated the Microservices can be run using the following command. Additional arguments can be added to the command to for example run the Microservice in debug mode (--debug), which enables live reloading. The port on which the Microservice runs can also be changed with an additional argument (--port <port-number>).
 ```
 flask --app flaskr run
+```
+## Dockerizing the Microservice
+To Dockerize the Microservice, make sure Docker is installed. The Microservice can be built into a Docker Image using the following command.
+```
+docker build -t <image-name> .
+```
+To run the Docker image in a Docker Container, use the following command.
+```
+docker run <image-name>
 ```
