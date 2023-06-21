@@ -16,12 +16,12 @@ def description():
 def operation():
     if request.method == 'GET':
         response = make_response({
-            "message": "Send data to this endpoint with an HTTP POST request to activate an operation on the data.",
-            "accepts": "application/json",
-            "returns": "application/json",
+            "supported_methods": ["GET", "POST"],
+            "POST_request_data": "all",
+            "POST_response_data": "application/json",
         })
         response.headers['Content-Type'] = 'application/json'
-        response.headers['Content-Length'] = 176
+        response.headers['Content-Length'] = 123
 
         return response
 
