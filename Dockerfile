@@ -1,12 +1,10 @@
 FROM python:3.9-alpine
 
-ENV FLASK_APP=flaskr
-ENV FLASK_DEBUG=1
-
 WORKDIR /app
 COPY . /app
 
-RUN pip install --editable .
-EXPOSE 3000
+ENV FLASK_APP=flaskr
 
-CMD [ "flask", "run", "--host=0.0.0.0" ]
+RUN pip install --editable .
+
+CMD [ "flask", "run", "--host=0.0.0.0", "--port=3000"]
